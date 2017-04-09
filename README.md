@@ -8,7 +8,7 @@
 <hr/>
 <h5>2.代码讲解</h5>
 <p>com.wu.bean里的代码为持久层代码，里面封装好了各个变量。<br/>
-在类checkUtil中，里面有Token口令、signature签名、timestamp时间戳和nonce随机数，然后Token+timestamp+nonce通过SHA-1加密（具体实现方法在SHA_1中）
+在类checkUtil中，里面有Token口令、signature签名、timestamp时间戳和nonce随机数，然后Token+timestamp+nonce通过SHA-1加密（具体实现方法在SHA_1中）这样从微信端发过来的验证signature是否相等，相等则验证通过，（注意！微信发过来验证都是doget！）
 </p>
 <p>
 类MessageUtil实现了把微信客户端传过来的xml格式的数据转换为map，这样才能对其进行处理。
