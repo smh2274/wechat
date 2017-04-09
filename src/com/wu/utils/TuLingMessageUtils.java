@@ -1,7 +1,7 @@
 package com.wu.utils;
 
 /**
- * 图灵机器人消息类型
+ * 消息类型
  * 
  * @author small bright
  *

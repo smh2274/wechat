@@ -2,16 +2,12 @@ package com.wu.bean;
 
 import java.util.List;
 /**
- * 图灵机器人api格式bean
+ * api格式bean
  * @author small bright
  *
  */
 public class TuLingMessageBean {
-	 /**
-     * code : 302000
-     * text : ********
-     * list : [{"article":"","source":"","detailurl":"","icon":"","trainnum":"","start":"","terminal":"","starttime":"","endtime":"","name":"","info":""}]
-     */
+
 
     private int code;
     private String text;
