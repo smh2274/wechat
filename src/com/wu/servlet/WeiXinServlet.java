@@ -143,63 +143,63 @@ public class WeiXinServlet extends HttpServlet {
 			news_bean.setMsgType("text");
 			temp = MessageUtil.map2xml(news_bean);
 			break;
-		case TuLingMessageUtils.CODE_TRAIN:
-			StringBuilder sb_train = new StringBuilder();
-			sb_train.append(tulingBean.getText()+"\n");
-			List<ListEntity> trainList = tulingBean.getList();
-			for (ListEntity listEntity : trainList) {
-				sb_train.append("车次：");
-				sb_train.append(listEntity.getTrainnum());
-				sb_train.append("\n");
-				sb_train.append(listEntity.getStart());
-				sb_train.append("\t到\t");
-				sb_train.append(listEntity.getTerminal());
-				sb_train.append("\n");
-				sb_train.append("发车：");
-				sb_train.append(listEntity.getStarttime());
-				sb_train.append("\t");
-				sb_train.append("终到：");
-				sb_train.append(listEntity.getEndtime());
-				sb_train.append("\n\n");
-			}
-			TextMessageBean train_bean = new TextMessageBean();
-			train_bean.setFromUserName(map.get("ToUserName"));
-			train_bean.setCreateTime(System.currentTimeMillis() / 1000);
-			train_bean.setContent(sb_train.toString());
-			// bean.setContent(map.get("Content"));
-			train_bean.setToUserName(map.get("FromUserName"));
-			train_bean.setMsgType("text");
-			temp = MessageUtil.map2xml(train_bean);
-			break;
-		case TuLingMessageUtils.CODE_OTHER:
-			StringBuilder sb_other = new StringBuilder();
-			sb_other.append(tulingBean.getText()+"\n");
-			List<ListEntity> otherList = tulingBean.getList();
-			int i = 0;
-			for (ListEntity listEntity : otherList) {
-				i++;
-				sb_other.append("菜名：");
-				sb_other.append(listEntity.getName());
-				sb_other.append("\n");
-				sb_other.append("原料：");
-				sb_other.append(listEntity.getInfo());
-				sb_other.append("\n操作步骤：");
-				sb_other.append(listEntity.getDetailurl());
-				if (i>5) {
-					break;
-				}else {
-					sb_other.append("\n\n");
-				}
-			}
-			TextMessageBean other_bean = new TextMessageBean();
-			other_bean.setFromUserName(map.get("ToUserName"));
-			other_bean.setCreateTime(System.currentTimeMillis() / 1000);
-			other_bean.setContent(sb_other.toString());
-			// bean.setContent(map.get("Content"));
-			other_bean.setToUserName(map.get("FromUserName"));
-			other_bean.setMsgType("text");
-			temp = MessageUtil.map2xml(other_bean);
-			break;
+//		case TuLingMessageUtils.CODE_TRAIN:
+//			StringBuilder sb_train = new StringBuilder();
+//			sb_train.append(tulingBean.getText()+"\n");
+//			List<ListEntity> trainList = tulingBean.getList();
+//			for (ListEntity listEntity : trainList) {
+//				sb_train.append("车次：");
+//				sb_train.append(listEntity.getTrainnum());
+//				sb_train.append("\n");
+//				sb_train.append(listEntity.getStart());
+//				sb_train.append("\t到\t");
+//				sb_train.append(listEntity.getTerminal());
+//				sb_train.append("\n");
+//				sb_train.append("发车：");
+//				sb_train.append(listEntity.getStarttime());
+//				sb_train.append("\t");
+//				sb_train.append("终到：");
+//				sb_train.append(listEntity.getEndtime());
+//				sb_train.append("\n\n");
+//			}
+//			TextMessageBean train_bean = new TextMessageBean();
+//			train_bean.setFromUserName(map.get("ToUserName"));
+//			train_bean.setCreateTime(System.currentTimeMillis() / 1000);
+//			train_bean.setContent(sb_train.toString());
+//			// bean.setContent(map.get("Content"));
+//			train_bean.setToUserName(map.get("FromUserName"));
+//			train_bean.setMsgType("text");
+//			temp = MessageUtil.map2xml(train_bean);
+//			break;
+//		case TuLingMessageUtils.CODE_OTHER:
+//			StringBuilder sb_other = new StringBuilder();
+//			sb_other.append(tulingBean.getText()+"\n");
+//			List<ListEntity> otherList = tulingBean.getList();
+//			int i = 0;
+//			for (ListEntity listEntity : otherList) {
+//				i++;
+//				sb_other.append("菜名：");
+//				sb_other.append(listEntity.getName());
+//				sb_other.append("\n");
+//				sb_other.append("原料：");
+//				sb_other.append(listEntity.getInfo());
+//				sb_other.append("\n操作步骤：");
+//				sb_other.append(listEntity.getDetailurl());
+//				if (i>5) {
+//					break;
+//				}else {
+//					sb_other.append("\n\n");
+//				}
+//			}
+//			TextMessageBean other_bean = new TextMessageBean();
+//			other_bean.setFromUserName(map.get("ToUserName"));
+//			other_bean.setCreateTime(System.currentTimeMillis() / 1000);
+//			other_bean.setContent(sb_other.toString());
+//			// bean.setContent(map.get("Content"));
+//			other_bean.setToUserName(map.get("FromUserName"));
+//			other_bean.setMsgType("text");
+//			temp = MessageUtil.map2xml(other_bean);
+//			break;
 		default:
 			break;
 		}
