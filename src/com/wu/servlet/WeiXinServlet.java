@@ -27,6 +27,8 @@ import com.wu.utils.CheckUtil;
 import com.wu.utils.MessageUtil;
 import com.wu.utils.TuLingMessageUtils;
 
+import javafx.event.EventType;
+
 public class WeiXinServlet extends HttpServlet {
 
 	private static final String tulingRobot = "http://www.tuling123.com/openapi/api";
@@ -65,6 +67,7 @@ public class WeiXinServlet extends HttpServlet {
 			if (map.get("MsgType").equals("text")) {
 				temp = doTextMessage(map);
 			}
+		
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,6 +77,9 @@ public class WeiXinServlet extends HttpServlet {
 			pWriter.print(temp);
 		}
 		pWriter.close();
+		
+		
+		
 	}
 
 	public String tuling(String arg, String fromUser) throws IOException {

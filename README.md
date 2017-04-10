@@ -16,4 +16,19 @@
 <p>
 类TuLingMessageUtil则一些第三方API出问题时的一些静态常量
 </p>
-还在持续更新中。。。。。。。
+<p>
+weixinservlet类，主要是doget方法进行Token的验证，和图灵机器人的API的调用
+</p>
+<p>
+导入Webcontent/WEB-INF/lib里面的jar包<br/>
+在Webcontent/WEB-INF/web.xml配置相应的servlet,url-pattern中随你自己命名，比如我的是/wc.do,那么到时候你微信服务器配置的url应为IP+项目名称/wc.do
+</p>
+<p>
+<strong>最后检查你的代码有无错误，如若没有错误，把项目export成WAR包，然后把WAR包放到你服务器里面的Tomcat/webapps/目录下（记得要运行起来你的tomcat）</strong>
+</p>
+<hr/>
+<h5>图灵机器人</h5>
+<p>
+可登录<a href="http://www.tuling123.com/">图灵机器人官网</a>进行注册，然后创建机器人，然后复制机器人的API到java代码里
+</p>
+还在更新完善呢。。。。。
