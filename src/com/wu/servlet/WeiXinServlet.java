@@ -83,8 +83,8 @@ public class WeiXinServlet extends HttpServlet {
 	}
 
 	public String tuling(String arg, String fromUser) throws IOException {
-//APIKEY替换成你自己的API
-		String APIKEY = "19f2f60448df4bf9a884d25b561da715";
+//APIKEY替换成你自己的API,我这里用111111代替
+		String APIKEY = "1111111";
 		String INFO = URLEncoder.encode(arg, "utf-8");
 		String getURL = "http://www.tuling123.com/openapi/api?key=" + APIKEY + "&info=" + INFO + "&userid=" + fromUser;
 		System.out.println("请求图灵接口的url\r" + getURL);
